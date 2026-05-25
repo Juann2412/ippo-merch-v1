@@ -10,6 +10,7 @@
 
 import type * as products from "../products.js";
 import type * as users from "../users.js";
+import type * as validators from "../validators.js";
 
 import type {
   ApiFromModules,
@@ -20,6 +21,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   products: typeof products;
   users: typeof users;
+  validators: typeof validators;
 }>;
 
 /**
