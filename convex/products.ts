@@ -7,7 +7,12 @@ export const getFeatured = query({
     const limit = args.limit ?? 8;
     return await ctx.db
       .query("products")
-      .filter((q) => q.eq(q.field("featured"), true))
+      .filter((q) =>
+        q.and(
+          q.eq(q.field("featured"), true),
+          q.eq(q.field("isActive"), true),
+        ),
+      )
       .take(limit);
   },
 });

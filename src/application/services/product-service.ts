@@ -1,6 +1,6 @@
-import type { BlindBox } from "@/domain";
+import type { Product, ProductWithImages } from "@/domain";
 
 export interface ProductService {
-  getFeaturedBlindBoxes(limit?: number): Promise<BlindBox[]>;
-  getBlindBoxBySlug(slug: string): Promise<BlindBox | null>;
+  getFeaturedProducts(limit?: number): Promise<ProductWithImages[]>;
+  getProductBySlug(slug: string): Promise<ProductWithImages | null>;
 }
