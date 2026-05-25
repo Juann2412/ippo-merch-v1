@@ -1,6 +1,8 @@
-# IPPO Merch — Blind Box Figurines Anime
+# IPPO Merch v1 — Blind Box Figurines Anime
 
 Boutique e-commerce Next.js 15 · Clean Architecture légère · Convex · Clerk · Zustand · Framer Motion · shadcn/ui.
+
+**Dépôt Git :** `ippo-merch-v1`
 
 ## Prérequis
 
