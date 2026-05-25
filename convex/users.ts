@@ -30,9 +30,16 @@ export const store = mutation({
 
     const email = identity.email ?? "";
     const name = identity.name ?? identity.nickname ?? undefined;
+    const imageUrl = identity.pictureUrl ?? undefined;
+    const now = Date.now();
 
     if (existing) {
-      await ctx.db.patch(existing._id, { email, name });
+      await ctx.db.patch(existing._id, {
+        email,
+        name,
+        imageUrl,
+        updatedAt: now,
+      });
       return existing._id;
     }
 
@@ -40,6 +47,9 @@ export const store = mutation({
       clerkId: identity.subject,
       email,
       name,
+      imageUrl,
+      createdAt: now,
+      updatedAt: now,
     });
   },
 });
