@@ -33,6 +33,10 @@ export class ProductService {
     return this.products.getFeatured(limit);
   }
 
+  listCatalog(activeOnly = true): Promise<ProductWithImages[]> {
+    return this.products.listCatalog(activeOnly);
+  }
+
   getProductWithImages(id: string): Promise<ProductWithImages | null> {
     return this.products.getWithRelations(id);
   }

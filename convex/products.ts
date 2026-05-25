@@ -54,6 +54,45 @@ export const getBySlug = query({
   },
 });
 
+/** Catalogue complet : produits actifs + images + catégories */
+export const listCatalog = query({
+  args: { activeOnly: v.optional(v.boolean()) },
+  handler: async (ctx, args) => {
+    const activeOnly = args.activeOnly ?? true;
+    let products = await ctx.db.query("products").collect();
+    if (activeOnly) {
+      products = products.filter((p) => p.isActive);
+    }
+
+    const categoryCache = new Map<
+      string,
+      Awaited<ReturnType<typeof ctx.db.get<"categories">>>
+    >();
+
+    const items = await Promise.all(
+      products.map(async (product) => {
+        if (!categoryCache.has(product.categoryId)) {
+          categoryCache.set(
+            product.categoryId,
+            await ctx.db.get(product.categoryId),
+          );
+        }
+        const images = await ctx.db
+          .query("product_images")
+          .withIndex("by_product", (q) => q.eq("productId", product._id))
+          .collect();
+        return {
+          product,
+          images,
+          category: categoryCache.get(product.categoryId) ?? null,
+        };
+      }),
+    );
+
+    return items;
+  },
+});
+
 export const getFeatured = query({
   args: { limit: v.optional(v.number()) },
   handler: async (ctx, args) => {

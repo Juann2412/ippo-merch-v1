@@ -144,4 +144,24 @@
   .text-gradient-neon {
     @apply bg-gradient-to-r from-neon-pink via-neon-violet to-neon-cyan bg-clip-text text-transparent;
   }
+  .rarity-secret-shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(0.72 0.22 350),
+      oklch(0.82 0.14 195),
+      oklch(0.65 0.25 295),
+      oklch(0.78 0.16 85),
+      oklch(0.72 0.22 350)
+    );
+    background-size: 200% 100%;
+    animation: rarity-shimmer 3s linear infinite;
+  }
+  @keyframes rarity-shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
 }

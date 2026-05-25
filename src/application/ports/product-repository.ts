@@ -41,6 +41,7 @@ export interface ProductRepository {
   getById(id: string): Promise<Product | null>;
   getBySlug(slug: string): Promise<Product | null>;
   getFeatured(limit?: number): Promise<Product[]>;
+  listCatalog(activeOnly?: boolean): Promise<ProductWithImages[]>;
   getWithRelations(id: string): Promise<ProductWithImages | null>;
   getWithRelationsBySlug(slug: string): Promise<ProductWithImages | null>;
   create(input: CreateProductInput): Promise<Product>;

@@ -9,6 +9,8 @@
  */
 
 import type * as categories from "../categories.js";
+import type * as fixNarutoImages from "../fixNarutoImages.js";
+import type * as lib_naruto_images from "../lib/naruto_images.js";
 import type * as lib_timestamps from "../lib/timestamps.js";
 import type * as order_items from "../order_items.js";
 import type * as orders from "../orders.js";
@@ -26,6 +28,8 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   categories: typeof categories;
+  fixNarutoImages: typeof fixNarutoImages;
+  "lib/naruto_images": typeof lib_naruto_images;
   "lib/timestamps": typeof lib_timestamps;
   order_items: typeof order_items;
   orders: typeof orders;

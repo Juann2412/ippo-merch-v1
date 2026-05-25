@@ -47,6 +47,15 @@ export class ConvexProductRepository implements ProductRepository {
     return docs.map(toProduct);
   }
 
+  async listCatalog(activeOnly = true) {
+    const rows = await this.client.query(api.products.listCatalog, {
+      activeOnly,
+    });
+    return rows.map((row) =>
+      toProductWithImages(row.product, row.images, row.category),
+    );
+  }
+
   async getWithRelations(id: string) {
     const row = await this.client.query(api.products.getWithRelations, {
       id: asProductId(id),

@@ -17,10 +17,10 @@ export default function HomePage() {
       </p>
       <div className="mt-10 flex flex-col gap-4 sm:flex-row">
         <Link
-          href="/catalog"
+          href="/products"
           className="glow-neon-pink inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
         >
-          Explorer le catalogue
+          Explorer les blind box
         </Link>
         <Link
           href="/inscription"
