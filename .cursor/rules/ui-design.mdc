@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+
+# UI/UX Rules - Blind Box Anime
+
+- Toujours privilégier un design immersif et excitant.
+- Utiliser des gradients néon et glows subtils pour les éléments rares.
+- Les BlindBoxCard doivent transmettre le sentiment de "surprise" et de collection.
+- Mobile-first + responsive parfait.
+- Dark mode par défaut.
+- Animations subtiles mais fun (Framer Motion).

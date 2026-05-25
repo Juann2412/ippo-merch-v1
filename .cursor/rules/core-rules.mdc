@@ -1,0 +1,52 @@
+---
+alwaysApply: true
+---
+
+# Core Project Rules - Blind Box Anime Store
+
+## Projet
+- Site e-commerce de Blind Box Figurines centré sur l'univers Manga / Anime (Naruto, One Piece, Jujutsu Kaisen, Demon Slayer, Dragon Ball, etc.).
+- Ambiance : Otaku premium, excitante, mystère "unboxing", dark mode dominant avec accents néon (rose, cyan, violet, or).
+
+## Stack Technique
+- Next.js 15 (App Router + React 19)
+- TypeScript (strict mode)
+- Tailwind CSS + shadcn/ui
+- Convex (backend + database)
+- Clerk (authentification)
+- Zustand (state client, surtout panier)
+- Framer Motion (animations)
+
+## Architecture (à respecter strictement)
+- Utilise **Clean Architecture légère** :
+  - `src/domain/` → Entités métier pures
+  - `src/application/` → Use cases / Services
+  - `src/infrastructure/` → Convex, Clerk, external services
+  - `src/features/` → Organisation par feature (products, cart, etc.)
+  - `src/presentation/` → Composants UI purs
+  - `src/components/` → Composants réutilisables shadcn
+- Server Components par défaut
+- Client Components uniquement quand nécessaire (`"use client"`)
+- Feature-based + Colocation quand pertinent
+
+## Style & Design
+- Design premium, immersif, excitant pour les collectionneurs otaku.
+- Effets hover dynamiques sur les BlindBoxCard (glow néon, scale, léger reveal).
+- Badges de rareté très visuels (Common=gris, Rare=bleu, Epic=violet, Legendary=or, Secret=arc-en-ciel).
+- Animations fluides avec Framer Motion.
+- Typographie moderne et lisible.
+
+## Bonnes Pratiques Code
+- Code fortement typé et lisible.
+- Nommage clair et explicite (ex: `getProductsByAnime`, `BlindBoxCard`).
+- Séparation stricte des responsabilités.
+- Utilise Server Actions quand possible avec Convex.
+- Gestion d'erreurs + loading states propres.
+- Prépare toujours la scalabilité (pagination, filtres, recherche).
+
+## Rareté & Métier
+- Rarity levels : Common, Rare, Epic, Legendary, Secret
+- Chaque produit a : characterName, animeTitle, series, probability, images (boîte + reveal)
+- Toujours privilégier l'expérience "mystère" et collection.
+
+Pense comme un senior .NET migré vers le fullstack moderne : code propre, maintenable, testable et scalable.

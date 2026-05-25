@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+---
+
+# Convex Rules
+
+- Utiliser les conventions Convex (query/mutation, args validation avec v.*)
+- Préférer les queries côté serveur quand possible.
+- Synchroniser les utilisateurs Clerk avec Convex (userId).
+- Toujours gérer le stock et les raretés correctement.

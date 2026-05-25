@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+# Naming Conventions
+
+- Composants : PascalCase (BlindBoxCard, ProductGrid)
+- Fichiers : kebab-case ou PascalCase selon le type
+- Variables : camelCase
+- Functions : verb + noun (getFeaturedBlindBoxes, addToCart)
+- Types/Interfaces : PascalCase
