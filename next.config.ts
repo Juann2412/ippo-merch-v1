@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "*.convex.cloud",
       },
+      {
+        protocol: "https",
+        hostname: "cdn11.bigcommerce.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.easyspot.co.nz",
+      },
     ],
   },
   experimental: {

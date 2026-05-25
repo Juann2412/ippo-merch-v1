@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "convex:dev": "convex dev",
-    "convex:deploy": "convex deploy"
+    "convex:deploy": "convex deploy",
+    "seed:naruto": "convex run seed:runNaruto",
+    "seed:naruto:force": "convex run seed:runNaruto '{\"force\":true}'"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

@@ -18,8 +18,9 @@ export default defineSchema({
     email: v.string(),
     name: v.optional(v.string()),
     imageUrl: v.optional(v.string()),
-    createdAt: v.number(),
-    updatedAt: v.number(),
+    /** Optionnel pour rétrocompatibilité — renseigné par users.store */
+    createdAt: v.optional(v.number()),
+    updatedAt: v.optional(v.number()),
   }).index("by_clerk_id", ["clerkId"]),
 
   categories: defineTable({
